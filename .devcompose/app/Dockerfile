@@ -47,6 +47,8 @@ RUN apt-get install -y sudo git
 # creates user
 RUN apt-get install
 ARG UID=1020
+ARG USER
+ARG PASSWORD
 RUN useradd -m --uid ${UID} --groups sudo ${USER} &&\
     echo ${USER}:${PASSWORD} | chpasswd
 # change user
